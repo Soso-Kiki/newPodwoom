@@ -1638,25 +1638,44 @@ export function GameMainScreen({
 
   // ── 게임 홈 메인 ──────────────────────────
   return (
+    <div style={{ background:"#e8d4a8", minHeight:"100vh" }}>
     <div style={{ ...S.wrap, background:"#e8d4a8" }}>
       <Room3D char={char} placedFurniture={placedFurni} onBubbleClick={() => setSubScreen("quests")} onCharClick={() => setSubScreen("chat")} userName={userName} />
 
       {/* HUD - 방 배경 위에 플로팅 */}
-      <div style={{ position:"absolute",top:0,left:0,right:0,zIndex:20,padding:"10px 14px",display:"flex",alignItems:"center",gap:8 }}>
+      <div style={{ position:"absolute",top:0,left:0,right:0,zIndex:20,padding:"10px 12px",display:"flex",alignItems:"center" }}>
+        {/* 캐릭터 아이콘 */}
         <div onClick={() => setShowProfile(true)} style={{ cursor:"pointer",flexShrink:0 }}>
           <Char3D char={char} size={36} shadow={false} />
         </div>
-        <div style={{ display:"flex",alignItems:"center",gap:5,background:"rgba(255,255,255,0.4)",backdropFilter:"blur(10px)",borderRadius:20,padding:"4px 11px" }}>
-          <span style={{ fontSize:10,color:"#fff",fontWeight:600 }}>Lv.{level}</span>
-          <div style={{ width:50,height:5,background:"rgba(255,255,255,0.6)",borderRadius:4,overflow:"hidden" }}>
-            <div style={{ width:`${xp}%`,height:"100%",background:"linear-gradient(90deg,#4378F1,#051893)",borderRadius:4 }} />
+
+        {/* 경험치 게이지 바 — 별 아이콘이 왼쪽 14px 튀어나오므로 marginLeft:20 */}
+        <div style={{ position:"relative",display:"inline-flex",alignItems:"center",flexShrink:0,marginLeft:20 }}>
+          {/* 배경 바 (자연 비율 유지) */}
+          <img src="/model/gaugebar.png" style={{ height:30,width:"auto",display:"block" }} />
+          {/* 채우기 바 — 배경과 동일 위치·크기로 겹치고 오른쪽에서 clip */}
+          <img src="/model/gauge_fillcolor.png" style={{ position:"absolute",top:0,left:0,height:30,width:"auto",clipPath:`inset(0 ${100-(xp||0)}% 0 0)`,transition:"clip-path 0.5s ease",pointerEvents:"none" }} />
+          {/* xp 텍스트 */}
+          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:900,color:"#aaa",paddingLeft:10,pointerEvents:"none" }}>{xp}%</div>
+          {/* 별 아이콘 (왼쪽 14px 겹침) */}
+          <div style={{ position:"absolute",left:-12,top:"50%",transform:"translateY(-50%)",zIndex:2,width:34,height:34,display:"flex",alignItems:"center",justifyContent:"center",pointerEvents:"none" }}>
+            <img src="/model/gaugestar.png" style={{ width:"100%",height:"100%",objectFit:"contain" }} />
+            <span style={{ position:"absolute",fontSize:11,fontWeight:900,color:"#fff",textShadow:"0 1px 4px rgba(0,80,180,0.9)" }}>{level}</span>
           </div>
-          <span style={{ fontSize:9,color:"rgba(255,255,255,0.85)" }}>{xp}/100</span>
         </div>
-        <div style={{ marginLeft:"auto",display:"flex",alignItems:"center",gap:2,background:"rgba(255,255,255,0.4)",backdropFilter:"blur(10px)",borderRadius:20,padding:"2px 9px" }}>
-          <span>⭐</span><span style={{ color:"#fff",fontWeight:500,fontSize:11 }}>{points}P</span>
+
+        {/* 코인 바 — 코인 아이콘이 왼쪽 14px 튀어나오므로 marginLeft:22 */}
+        <div style={{ position:"relative",display:"inline-flex",alignItems:"center",flexShrink:0,marginLeft:22 }}>
+          {/* 배경 바 */}
+          <img src="/model/coinbar.png" style={{ height:30,width:"auto",display:"block" }} />
+          {/* 포인트 텍스트 */}
+          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:800,color:"#7A3000",paddingLeft:16,pointerEvents:"none" }}>{points}</div>
+          {/* 코인 아이콘 (왼쪽 14px 겹침) */}
+          <img src="/model/coin.png" style={{ position:"absolute",left:-14,top:"50%",transform:"translateY(-50%)",width:34,height:34,objectFit:"contain",zIndex:2,pointerEvents:"none" }} />
         </div>
-        <div onClick={onGoHome} style={{ width:32,height:32,background:"rgba(255,255,255,0.4)",backdropFilter:"blur(10px)",borderRadius:10,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",color:"#fff",fontSize:14 }}>✕</div>
+
+        {/* X 버튼 */}
+        <div onClick={onGoHome} style={{ marginLeft:"auto",width:30,height:30,background:"#2a2a2a",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",color:"#fff",fontSize:13,boxShadow:"0 2px 8px rgba(0,0,0,0.4)",flexShrink:0 }}>✕</div>
       </div>
 
       {/* 우측 사이드 버튼 */}
@@ -1767,6 +1786,7 @@ export function GameMainScreen({
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
