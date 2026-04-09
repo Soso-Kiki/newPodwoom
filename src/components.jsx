@@ -241,15 +241,15 @@ function RoomScene({ char, placedFurniture }) {
       ))}
       {/* 뒷벽 */}
       <mesh position={[0,1.5,-5.5]} receiveShadow>
-        <planeGeometry args={[14,7]}/><meshToonMaterial color="#C5C3B6"/>
+        <planeGeometry args={[14,7]}/><meshToonMaterial color="#FFF2FC"/>
       </mesh>
       {/* 왼쪽 벽 */}
       <mesh position={[-5.5,1.5,0]} rotation={[0,Math.PI/2,0]} receiveShadow>
-        <planeGeometry args={[14,7]}/><meshToonMaterial color="#C5C3B6"/>
+        <planeGeometry args={[14,7]}/><meshToonMaterial color="#FFF2FC"/>
       </mesh>
       {/* 오른쪽 벽 */}
       <mesh position={[5.5,1.5,0]} rotation={[0,-Math.PI/2,0]} receiveShadow>
-        <planeGeometry args={[14,7]}/><meshToonMaterial color="#C5C3B6"/>
+        <planeGeometry args={[14,7]}/><meshToonMaterial color="#FFF2FC"/>
       </mesh>
       {/* 창문 — 뒤쪽 벽 오른쪽 */}
       <group position={[1.7,1.2,-5.44]} rotation={[0,0,0]}>
