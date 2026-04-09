@@ -1705,38 +1705,39 @@ export function GameMainScreen({
         borderRadius:"20px 20px 0 0",
         borderTop:"1px solid rgba(0,0,0,0.08)",
         display:"flex", alignItems:"center", justifyContent:"space-around",
-        padding:"6px 30px 12px",
+        padding:"14px 30px 12px",
       }}>
         {/* 게임 */}
         <div onClick={() => setSubScreen("game")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
-          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🎮</div>
+          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",border:"2px solid #E5E5E5",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🎮</div>
           <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>게임</span>
         </div>
         {/* 수납장 */}
         <div onClick={() => setSubScreen("storage")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
-          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🗄️</div>
+          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",border:"2px solid #E5E5E5",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🗄️</div>
           <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>수납장</span>
         </div>
         {/* 대화 */}
-        <div onClick={() => setSubScreen("chat")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer",marginTop:-20 }}>
+        <div onClick={() => setSubScreen("chat")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:5,cursor:"pointer" }}>
           <div style={{
-            width:52, height:52, borderRadius:"50%",
+            width:56, height:56, borderRadius:"50%",
             background:"#E54182",
             display:"flex", alignItems:"center", justifyContent:"center",
-            fontSize:24,
+            fontSize:26,
             boxShadow:"0 4px 16px rgba(180,58,107,0.45)",
             border:"3px solid #fff",
+            marginTop:-25,
           }}>💬</div>
           <span style={{ fontSize:9,fontWeight:700,color:"#E54182" }}>대화</span>
         </div>
         {/* 원칙 */}
         <div onClick={() => setSubScreen("principle")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
-          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>⚖️</div>
+          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",border:"2px solid #E5E5E5",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>⚖️</div>
           <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>원칙</span>
         </div>
         {/* 운세 */}
         <div onClick={() => setSubScreen("fortune")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
-          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🔮</div>
+          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",border:"2px solid #E5E5E5",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🔮</div>
           <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>운세</span>
         </div>
       </div>
