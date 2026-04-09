@@ -1638,7 +1638,7 @@ export function GameMainScreen({
 
   // ── 게임 홈 메인 ──────────────────────────
   return (
-    <div style={{ background:"#e8d4a8", minHeight:"100vh" }}>
+    <div style={{ background:"#000", minHeight:"100vh" }}>
     <div style={{ ...S.wrap, background:"#e8d4a8" }}>
       <Room3D char={char} placedFurniture={placedFurni} onBubbleClick={() => setSubScreen("quests")} onCharClick={() => setSubScreen("chat")} userName={userName} />
 
@@ -1654,22 +1654,22 @@ export function GameMainScreen({
           {/* 배경 바 (자연 비율 유지) */}
           <img src="/model/gaugebar.png" style={{ height:30,width:"auto",display:"block" }} />
           {/* 채우기 바 — 배경과 동일 위치·크기로 겹치고 오른쪽에서 clip */}
-          <img src="/model/gauge_fillcolor.png" style={{ position:"absolute",top:0,left:0,height:30,width:"auto",clipPath:`inset(0 ${100-(xp||0)}% 0 0)`,transition:"clip-path 0.5s ease",pointerEvents:"none" }} />
+          <img src="/model/gauge_fillcolor.png" style={{ position:"absolute",top:3,left:0,height:24,width:"auto",clipPath:`inset(0 ${100-(xp||0)}% 0 0)`,transition:"clip-path 0.5s ease",pointerEvents:"none" }} />
           {/* xp 텍스트 */}
-          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:900,color:"#aaa",paddingLeft:10,pointerEvents:"none" }}>{xp}%</div>
+          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:900,color:"#F3F4F4",paddingLeft:10,pointerEvents:"none" }}>{xp}%</div>
           {/* 별 아이콘 (왼쪽 14px 겹침) */}
-          <div style={{ position:"absolute",left:-12,top:"50%",transform:"translateY(-50%)",zIndex:2,width:34,height:34,display:"flex",alignItems:"center",justifyContent:"center",pointerEvents:"none" }}>
+          <div style={{ position:"absolute",left:-12,top:"50%",transform:"translateY(-50%)",zIndex:2,width:38,height:38,display:"flex",alignItems:"center",justifyContent:"center",pointerEvents:"none" }}>
             <img src="/model/gaugestar.png" style={{ width:"100%",height:"100%",objectFit:"contain" }} />
             <span style={{ position:"absolute",fontSize:11,fontWeight:900,color:"#fff",textShadow:"0 1px 4px rgba(0,80,180,0.9)" }}>{level}</span>
           </div>
         </div>
 
         {/* 코인 바 — 코인 아이콘이 왼쪽 14px 튀어나오므로 marginLeft:22 */}
-        <div style={{ position:"relative",display:"inline-flex",alignItems:"center",flexShrink:0,marginLeft:22 }}>
+        <div style={{ position:"relative",display:"inline-flex",alignItems:"center",flexShrink:0,marginLeft:40 }}>
           {/* 배경 바 */}
           <img src="/model/coinbar.png" style={{ height:30,width:"auto",display:"block" }} />
           {/* 포인트 텍스트 */}
-          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:800,color:"#7A3000",paddingLeft:16,pointerEvents:"none" }}>{points}</div>
+          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:800,color:"#7A3000",paddingLeft:22,pointerEvents:"none" }}>{points}</div>
           {/* 코인 아이콘 (왼쪽 14px 겹침) */}
           <img src="/model/coin.png" style={{ position:"absolute",left:-14,top:"50%",transform:"translateY(-50%)",width:34,height:34,objectFit:"contain",zIndex:2,pointerEvents:"none" }} />
         </div>
