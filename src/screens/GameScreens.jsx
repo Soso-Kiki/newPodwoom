@@ -1683,7 +1683,7 @@ export function GameMainScreen({
         {[
           { icon:"🔔", label:"알림",   key:"notifications", badge:notifs.filter(n=>!n.read).length },
           { icon:"🎯", label:"퀘스트", key:"quests",        badge:quests.filter(q=>!q.done).length },
-          { icon:"💬", label:"대화",   key:"chat",          badge:0 },
+          { icon:"⭐", label:"포인트", key:"points",        badge:0 },
           { icon:"⚖️", label:"원칙",   key:"principle",     badge:principles.filter(p=>p.enabled).length },
         ].map(btn => (
           <div key={btn.key} onClick={() => setSubScreen(btn.key)} style={{ position:"relative",display:"flex",flexDirection:"column",alignItems:"center",gap:4,cursor:"pointer" }}>
@@ -1717,15 +1717,17 @@ export function GameMainScreen({
           <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🗄️</div>
           <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>수납장</span>
         </div>
-        {/* 포인트 */}
-        <div onClick={() => setSubScreen("points")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
+        {/* 대화 */}
+        <div onClick={() => setSubScreen("chat")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer",marginTop:-20 }}>
           <div style={{
-            width:38, height:38, borderRadius:"50%",
-            background:"rgba(180,58,107,0.75)",
+            width:52, height:52, borderRadius:"50%",
+            background:"#E54182",
             display:"flex", alignItems:"center", justifyContent:"center",
-            fontSize:18,
-          }}>⭐</div>
-          <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>포인트</span>
+            fontSize:24,
+            boxShadow:"0 4px 16px rgba(180,58,107,0.45)",
+            border:"3px solid #fff",
+          }}>💬</div>
+          <span style={{ fontSize:9,fontWeight:700,color:"#E54182" }}>대화</span>
         </div>
         {/* 상점 */}
         <div onClick={() => setSubScreen("shop")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
