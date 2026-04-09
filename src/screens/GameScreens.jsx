@@ -1656,7 +1656,7 @@ export function GameMainScreen({
           {/* 채우기 바 — 배경과 동일 위치·크기로 겹치고 오른쪽에서 clip */}
           <img src="/model/gauge_fillcolor.png" style={{ position:"absolute",top:3,left:0,height:24,width:"auto",clipPath:`inset(0 ${100-(xp||0)}% 0 0)`,transition:"clip-path 0.5s ease",pointerEvents:"none" }} />
           {/* xp 텍스트 */}
-          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:900,color:"#F3F4F4",paddingLeft:10,pointerEvents:"none" }}>{xp}%</div>
+          <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:900,color:"#F3F4F4",paddingLeft:10,pointerEvents:"none",WebkitTextStroke:"0.4px #D5D5D5" }}>{xp}%</div>
           {/* 별 아이콘 (왼쪽 14px 겹침) */}
           <div style={{ position:"absolute",left:-12,top:"50%",transform:"translateY(-50%)",zIndex:2,width:38,height:38,display:"flex",alignItems:"center",justifyContent:"center",pointerEvents:"none" }}>
             <img src="/model/gaugestar.png" style={{ width:"100%",height:"100%",objectFit:"contain" }} />
