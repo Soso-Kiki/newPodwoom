@@ -1684,7 +1684,7 @@ export function GameMainScreen({
           { icon:"🔔", label:"알림",   key:"notifications", badge:notifs.filter(n=>!n.read).length },
           { icon:"🎯", label:"퀘스트", key:"quests",        badge:quests.filter(q=>!q.done).length },
           { icon:"⭐", label:"포인트", key:"points",        badge:0 },
-          { icon:"⚖️", label:"원칙",   key:"principle",     badge:principles.filter(p=>p.enabled).length },
+          { icon:"🛒", label:"상점",   key:"shop",          badge:0 },
         ].map(btn => (
           <div key={btn.key} onClick={() => setSubScreen(btn.key)} style={{ position:"relative",display:"flex",flexDirection:"column",alignItems:"center",gap:4,cursor:"pointer" }}>
             <div style={{ width:38,height:38,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",background:"#fff",boxShadow:"0 3px 12px rgba(0,0,0,0.18)" }}>
@@ -1729,10 +1729,10 @@ export function GameMainScreen({
           }}>💬</div>
           <span style={{ fontSize:9,fontWeight:700,color:"#E54182" }}>대화</span>
         </div>
-        {/* 상점 */}
-        <div onClick={() => setSubScreen("shop")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
-          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>🛒</div>
-          <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>상점</span>
+        {/* 원칙 */}
+        <div onClick={() => setSubScreen("principle")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
+          <div style={{ width:38,height:38,borderRadius:"50%",background:"#f0f0f0",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18 }}>⚖️</div>
+          <span style={{ fontSize:9,fontWeight:600,color:"#333" }}>원칙</span>
         </div>
         {/* 운세 */}
         <div onClick={() => setSubScreen("fortune")} style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:2,cursor:"pointer" }}>
